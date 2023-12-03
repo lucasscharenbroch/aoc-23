@@ -1,6 +1,6 @@
 #! /usr/bin/dyalogscript
 
-input ← ⊃⎕NGET '2-1.input' 1
+input ← ⊃⎕NGET '2.input' 1
 
 split ← {
     1=≢⍺ : ⍺ (≠⊆⊢) ⍵
@@ -16,7 +16,15 @@ rgb ← { ⍝ ⍵ = (num-string color-string)
 solve ← {
     ssets ← '; ' split 2⊃': ' split ⍵
     nsets ← { ⊃ ⌈/ (rgb' '∘split)¨ ', ' split ⍵ }¨ ssets
+    ∧/ (∧/⍤(12 13 14∘≥))¨ nsets
+}
+
+⎕ ← +/ (solve¨×(⍳≢)) input
+
+solve2 ← {
+    ssets ← '; ' split 2⊃': ' split ⍵
+    nsets ← { ⊃ ⌈/ (rgb' '∘split)¨ ', ' split ⍵ }¨ ssets
     (×/⊃)⍤(⌈/) nsets
 }
 
-⎕ ← +/ solve¨ input
+⎕ ← +/ solve2¨ input
