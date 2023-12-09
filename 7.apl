@@ -1,4 +1,4 @@
-#! /usr/bin/dyalogscript
+#!/usr/bin/dyalogscript
 
 input ← ⊃⎕NGET '7.input' 1
 

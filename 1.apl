@@ -1,4 +1,4 @@
-#! /usr/bin/dyalogscript
+#!/usr/bin/dyalogscript
 
 input ← ⊃⎕NGET '1.input' 1
 solve ← +/(⍎⍤(⊃,⊃⍤⌽)(∊∘⎕D¨(⊢⍤/)⊢))¨

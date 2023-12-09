@@ -1,4 +1,4 @@
-#! /usr/bin/dyalogscript
+#!/usr/bin/dyalogscript
 
 input ← ⊃⎕NGET '9.input' 1
 seqs ← (⍎¨≠∘' '⊆⊢)¨ input

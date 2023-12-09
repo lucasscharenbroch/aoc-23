@@ -1,4 +1,4 @@
-#! /usr/bin/dyalogscript
+#!/usr/bin/dyalogscript
 
 input ← ⊃⎕NGET '4.input' 1
 points ← { +/, (⊃∘.=2∘⊃) (⍎¨≠∘' '⊆⊢)¨ 1↓ (~⍤(∊∘':|')⊆⊢) ⍵ }
