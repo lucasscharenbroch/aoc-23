@@ -24,7 +24,7 @@ update_direction ← { ⍝ ⍺⍺=min, ⍵⍵=max
 
 step ← { ⊃ ⌊/ (⍳4) (⍺⍺ update_direction ⍵⍵)¨ ⊂⍵ }
 
-solve ← { (1-⍨ ⍴grid)⌷ ⌊/⌊/ (⍺⍺ step ⍵⍵)⍣(≢⊃,/input) ⊢ (0@(2 2 1 ⍵⍵)(2 2 2 ⍵⍵)) inf⍴⍨4 ⍵⍵,⍨⍴⍵ }
+solve ← { (1-⍨ ⍴grid)⌷ ⌊/⌊/ ((⍺⍺-1)↓⊢)⍤1 (⍺⍺ step ⍵⍵)⍣(≢⊃,/input) ⊢ (0@(2 2 1 ⍵⍵)(2 2 2 ⍵⍵)) inf⍴⍨4 ⍵⍵,⍨⍴⍵ }
 
 ⎕ ← (1 solve 3) grid
 ⎕ ← (4 solve 10) grid
